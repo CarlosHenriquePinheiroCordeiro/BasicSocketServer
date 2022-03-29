@@ -45,6 +45,20 @@ public class Server {
 	}
 
 	/**
+	 * Closes the server
+	 */
+	public void close() {
+		try {
+			server.close();
+			System.out.println("Server closed.");
+		} catch (Exception e) {
+			System.out.println("Closing server error.");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
 	 * Returns the Port attribute about the Server
 	 * @return
 	 */

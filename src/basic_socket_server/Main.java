@@ -10,8 +10,13 @@ import java.net.ServerSocket;
 public class Main {
 
 	public static void main(String[] args) {
-		Server.getInstance();
-	
+		try {
+			Client client = new Client(Server.getInstance().accept());
+			System.out.println("Client accepted.");
+		} catch (Exception e) {
+			System.out.println("Client accepting error:\n");
+			e.printStackTrace();
+		}
 	}
 
 
