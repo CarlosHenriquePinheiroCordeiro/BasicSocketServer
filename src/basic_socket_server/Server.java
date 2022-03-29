@@ -47,7 +47,7 @@ public class Server {
 	/**
 	 * Closes the server
 	 */
-	public void close() {
+	public static void close() {
 		try {
 			server.close();
 			System.out.println("Server closed.");

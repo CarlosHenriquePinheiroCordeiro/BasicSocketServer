@@ -1,6 +1,6 @@
 package basic_socket_server;
 
-import java.net.ServerSocket;
+import java.util.Scanner;
 
 /**
  * The Server piece main class
@@ -10,13 +10,14 @@ import java.net.ServerSocket;
 public class Main {
 
 	public static void main(String[] args) {
-		try {
-			Client client = new Client(Server.getInstance().accept());
-			System.out.println("Client accepted.");
-		} catch (Exception e) {
-			System.out.println("Client accepting error:\n");
-			e.printStackTrace();
+		Client client = new Client(Server.getInstance());
+		System.out.println("Client accepted.");
+		Scanner in = new Scanner(client.getInputStream());
+		while (in.hasNextLine()) {
+			System.out.println(in.nextLine());
 		}
+		in.close();
+		Server.close();
 	}
 
 
