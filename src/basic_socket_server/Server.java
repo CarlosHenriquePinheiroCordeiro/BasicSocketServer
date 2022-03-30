@@ -12,7 +12,7 @@ public class Server {
 	/**
 	 * Server instance
 	 */
-	public static ServerSocket server = null;
+	private static ServerSocket server = null;
 	
 	/**
 	 * Server port attribute
@@ -41,7 +41,6 @@ public class Server {
 			System.out.println("Creating server error: \n");
 			e.printStackTrace();
 		}
-		
 	}
 
 	/**
